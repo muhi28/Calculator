@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.muhi.calculator.MainActivity">
 
+    <EditText
+        android:id="@+id/editText_input"
+        android:layout_width="179dp"
+        android:layout_height="29dp"
+        android:layout_x="93dp"
+        android:layout_y="28dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editText_output"
+        android:layout_width="180dp"
+        android:layout_height="31dp"
+        android:layout_x="92dp"
+        android:layout_y="80dp"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/button_id"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_x="291dp"
+        android:layout_y="44dp"
+        android:text="@string/buttonname"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text1_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="15dp"
+        android:layout_y="32dp"
+        android:text="@string/dividend"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text2_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="24dp"
+        android:layout_y="86dp"
+        android:text="@string/divisor"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/result_id"
+        android:layout_width="174dp"
+        android:layout_height="34dp"
+        android:layout_x="88dp"
+        android:layout_y="151dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="12dp"
+        android:layout_y="155dp"
+        android:text="@string/out"
+        android:textAllCaps="false"
+        android:textSize="17sp"
+        android:textStyle="bold" />
 </AbsoluteLayout>

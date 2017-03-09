@@ -1,3 +1,9 @@
 <resources>
+
     <string name="app_name">Calculator</string>
+    <string name ="dividend">Dividend:</string>
+    <string name = "divisor">Divisor:</string>
+    <string name = "out">OUTPUT:</string>
+    <string name="buttonname">Divide</string>
+
 </resources>
