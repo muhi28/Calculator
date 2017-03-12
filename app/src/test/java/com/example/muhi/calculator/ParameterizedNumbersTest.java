@@ -16,7 +16,7 @@ import java.util.Collection;
  */
 
 @RunWith(Parameterized.class)
-public class ParameterizedNumbersTest {
+public class  ParameterizedNumbersTest {
 
     private Calculations calc;
     private double number1;
