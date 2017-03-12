@@ -137,7 +137,6 @@ public class MainActivityUITest {
 
         onView(withId(R.id.button_id)).perform(click());
 
-
         onView(withId(R.id.textView_id)).check(matches(withText("DIVIDE BY 0 !!!")));
         onView(withId(R.id.textView2_id)).check(matches(withText("ZAHL ungleich 0 eingeben.")));
 
