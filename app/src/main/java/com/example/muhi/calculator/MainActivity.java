@@ -64,6 +64,8 @@ public class MainActivity extends Activity {
                             bt2.setVisibility(View.INVISIBLE);
                             exception.setVisibility(View.INVISIBLE);
                             exception2.setVisibility(View.INVISIBLE);
+
+                            clearInput();
                         }
                     });
                 }
@@ -97,6 +99,11 @@ public class MainActivity extends Activity {
 
         out.setText(null);
         input.setText(null);
+        input2.setText(null);
+    }
+
+    public void clearInput(){
+
         input2.setText(null);
     }
    /* public double calculate(double dividend, double divisor)  {
