@@ -11,5 +11,6 @@
     <string name="ok">OK</string>
     <string name="clear">CLEAR</string>
     <string name="nullpoint">Sie müssen eine Zahl eingeben.</string>
+    <string name="nothing">Bitte Werte eingeben.</string>
 
 </resources>

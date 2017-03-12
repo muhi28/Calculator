@@ -29,7 +29,11 @@ public class MainActivity extends Activity {
         //Buttons
         Button bt1 = (Button) this.findViewById(R.id.button_id);
         final Button bt2 = (Button)this.findViewById(R.id.ok_id);
-        final Button bt3 = (Button)this.findViewById(R.id.clear_id);
+         Button bt3 = (Button)this.findViewById(R.id.clear_id);
+
+        input = (EditText) findViewById(R.id.input1_id);
+        input2 = (EditText)findViewById(R.id.input2_id);
+
 
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,12 +41,11 @@ public class MainActivity extends Activity {
 
 
                 //Übernehmen der eingegebenen Zahlen:
-                input = (EditText) findViewById(R.id.input1_id);
-                input2 = (EditText)findViewById(R.id.input2_id);
+               // input = (EditText) findViewById(R.id.input1_id);
+               // input2 = (EditText)findViewById(R.id.input2_id);
 
                 dividend = Double.parseDouble(input.getText().toString());
                 divisor = Double.parseDouble(input2.getText().toString());
-
 
                 if(divisor == 0){
 
@@ -77,19 +80,21 @@ public class MainActivity extends Activity {
                     exception.setVisibility(View.INVISIBLE);
                     out.setVisibility(View.VISIBLE);
 
-                    bt3.setOnClickListener(new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View view) {
-
-                            clear();
-
-                        }
-                    });
 
                 }
 
 
+
+            }
+        });
+
+
+        bt3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                clear();
 
             }
         });

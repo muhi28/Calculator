@@ -33,6 +33,8 @@ public class UnitTests {
         calc = null;
     }
 
+
+    // Prüfen ob die Methode richtig reagiert.
     @Test(expected = ArithmeticException.class)
     public void CalculateDividebyZERO()  {
 
