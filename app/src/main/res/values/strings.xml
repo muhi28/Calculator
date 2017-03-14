@@ -6,11 +6,12 @@
     <string name = "outLabel">OUTPUT:</string>
     <string name="buttonname">Divide</string>
     <string name="eingabe">Zahl eingeben</string>
-    <string name = "dbzero">DIVIDE BY 0 !!!</string>
-    <string name="notnull">ZAHL ungleich 0 eingeben.</string>
     <string name="ok">OK</string>
     <string name="clear">CLEAR</string>
-    <string name="nullpoint">Sie müssen eine Zahl eingeben.</string>
     <string name="nothing">Bitte Werte eingeben.</string>
+    <string name="error">ERROR</string>
+    <string name="divisorerror">Bitte Divisor eingeben.</string>
+    <string name="dividenderror">Bitte Dividend eingeben.</string>
+    <string name="incorrectInput">Falsche Eingabe !!!</string>
 
 </resources>

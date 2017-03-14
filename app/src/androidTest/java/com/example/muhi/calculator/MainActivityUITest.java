@@ -45,6 +45,20 @@ public class MainActivityUITest {
     @Rule
     public  ActivityTestRule<MainActivity> main = new ActivityTestRule<>(MainActivity.class);
 
+
+    @Test
+    public void testNoInput(){
+
+        // drücke Button um Berechnung auszuführen
+        onView(withId(R.id.button_id)).perform(click());
+
+        //Prüfen, ob die richtige Fehlermeldung angezeigt wird
+        onView(withId(R.id.textView2_id)).check(matches(withText(R.string.nothing)));
+
+        // Fehlermeldung und OK-Button auf INVISIBLE setzen
+        onView(withId(R.id.ok_id));
+    }
+
     @Test
     public void testDivision(){
 
@@ -62,6 +76,10 @@ public class MainActivityUITest {
         //prüfen, ob die Division das richtige Ergebnis liefert
         onView(withId(R.id.result_id)).check(matches(withText(Double.toString(calc.divison(10,5)))));
 
+
+
+        //onView(withId(R.id.input1_id)).perform(clearText());
+        //onView(withId(R.id.input2_id)).perform(clearText());
 
         //löschen der eingegebenen Werte und dem Ergebnis
         onView(withId(R.id.clear_id)).perform(click());
@@ -93,6 +111,8 @@ public class MainActivityUITest {
         onView(withId(R.id.result_id)).check(matches(withText(Double.toString(calc.divison(185.5,2.5)))));
 
 
+        //onView(withId(R.id.input1_id)).perform(clearText());
+        //onView(withId(R.id.input2_id)).perform(clearText());
 
         // löschen der vorhandenen Werte
         onView(withId(R.id.clear_id)).perform(click());
@@ -114,7 +134,11 @@ public class MainActivityUITest {
 
 
         // Prüfen ob die Divison das richtige Ergebnis liefert.
-        onView(withId(R.id.result_id)).check(matches(withText(Double.toString(calc.divison(847.5,1.2225)))));
+        onView(withId(R.id.result_id)).check(matches(withText(Double.toString(Math.round(847.5/1.2225*Math.pow(10d,9))/ Math.pow(10d,9)))));
+
+
+        //onView(withId(R.id.input1_id)).perform(clearText());
+        //onView(withId(R.id.input2_id)).perform(clearText());
 
 
         // löschen der eingegebenen Werte
@@ -142,7 +166,12 @@ public class MainActivityUITest {
         onView(withId(R.id.button_id)).perform(click());
 
         // Prüfen ob die Divison das richtige Ergebnis liefert.
-        onView(withId(R.id.result_id)).check(matches(withText(Double.toString(calc.divison(-105,-45)))));
+        onView(withId(R.id.result_id)).check(matches(withText(Double.toString(Math.round(-105.0/-45.0*Math.pow(10d,9))/ Math.pow(10d,9)))));
+
+
+        //onView(withId(R.id.input1_id)).perform(clearText());
+        //onView(withId(R.id.input2_id)).perform(clearText());
+
 
         // löschen der eingegebenen Werte
         onView(withId(R.id.clear_id)).perform(click());
@@ -164,6 +193,9 @@ public class MainActivityUITest {
                 .perform(typeText("-8.712"), closeSoftKeyboard());
 
 
+        //onView(withId(R.id.input1_id)).perform(clearText());
+        //onView(withId(R.id.input2_id)).perform(clearText());
+
         // löschen der eingegebenen Werte
         onView(withId(R.id.clear_id)).perform(click());
 
@@ -178,7 +210,12 @@ public class MainActivityUITest {
         onView(withId(R.id.button_id)).perform(click());
 
         // Prüfen ob die Divison das richtige Ergebnis liefert.
-        onView(withId(R.id.result_id)).check(matches(withText(Double.toString(calc.divison(-6428.4,-8.47)))));
+        onView(withId(R.id.result_id)).check(matches(withText(Double.toString(Math.round(-6428.4/-8.47*Math.pow(10d,9))/ Math.pow(10d,9)))));
+
+
+
+        //onView(withId(R.id.input1_id)).perform(clearText());
+        //onView(withId(R.id.input2_id)).perform(clearText());
 
 
         // löschen der eingegebenen Daten
@@ -206,17 +243,25 @@ public class MainActivityUITest {
         // Ausführen der Division
         onView(withId(R.id.button_id)).perform(click());
 
-        // prüfen ob die Textfelder den richten Text anzeigen
-        onView(withId(R.id.textView_id)).check(matches(withText("DIVIDE BY 0 !!!")));
-        onView(withId(R.id.textView2_id)).check(matches(withText("ZAHL ungleich 0 eingeben.")));
+        // prüfen ob die Output den richten Text anzeigen
+        onView(withId(R.id.result_id)).check(matches(withText("ERROR")));
+    }
 
 
+    @Test
+    public void testNoDividend(){
 
-        // durch drücken des OK-Buttons werden die Textfelder auf INVISIBLE gestellt
-        onView(withId(R.id.ok_id)).perform(click());
+        // Eingabe des Divisors
+        onView(withId(R.id.input1_id)).perform(typeText("15.5"), closeSoftKeyboard());
 
-        // prüfen ob der Wert nach drücken von OK auch wirklich entfernt wurde
-        onView(withId(R.id.input2_id)).check(matches(withText("")));
+        // drücke Button um Berechnung auszuführen
+        onView(withId(R.id.button_id)).perform(click());
+
+        //Prüfen, ob die richtige Fehlermeldung angezeigt wird
+        onView(withId(R.id.textView2_id)).check(matches(withText("Bitte Divisor eingeben.")));
+
+        // Fehlermeldung und OK-Button auf INVISIBLE setzen
+        onView(withId(R.id.ok_id));
 
     }
 
